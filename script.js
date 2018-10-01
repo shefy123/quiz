@@ -11,7 +11,8 @@ let opt4 = document.getElementById('opt4');
 let nextButton = document.getElementById('nextButton');
 let resultCont = document.getElementById('result');
 
-function loadQuestion (questionIndex) {
+function loadQuestion(questionIndex) {
+
      var q = quetions[questionIndex];
      quetionEL.textContent = (questionIndex + 1) + '. ' + q.quetion;
      opt1.textContent = q.option1;
@@ -22,10 +23,10 @@ function loadQuestion (questionIndex) {
 };
 
 function loadNextQuestion () {
-    var selectedOption =  document.querySelector('input[type=radio]:checked'),
+    var selectedOption =  document.querySelector('input[type=radio]:checked');
         
-    if ( !selectedOption ) {
-        alert('please select your answer!');
+    if ( !selectedOption  ) {
+        alert ('please select your answer!');
         console.log('sdhjkasd');
         return;
     }
@@ -34,7 +35,7 @@ function loadNextQuestion () {
     if (quetions[currentQuetion].answer == answer) {
         score += 10;
     }
-
+// unchecked
     selectedOption.checked = false;
     currentQuetion++;
     if (currentQuetion == totQuetions -1) {
